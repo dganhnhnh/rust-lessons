@@ -1,4 +1,4 @@
-
+// bai 1
 fn check_sub_array(A:&[usize],B:&[usize]) {
     let mut i:usize=0;
     let mut j:usize=0;
@@ -20,7 +20,7 @@ fn check_sub_array(A:&[usize],B:&[usize]) {
     println!("nah");
 }
 
-
+// bai 2
 fn count_occurences(reference: &str, check_str: &str){
     let res = reference.matches(&check_str).count();
     println!("{}",res);
@@ -33,16 +33,12 @@ fn main() {
     let b=[1,2];
     // check_sub_array(&a,&b);
 
-    // let mut file= File::open("test.txt");
-    // let mut re = String::new();
-    // file.read_to_string(&mut re).expect("err");
-
     let re = std::fs::read_to_string("test.txt").unwrap();
 
     println!("Your input: ");
     let mut check_str: String = String::new();
     std::io::stdin().read_line(&mut check_str);
 
-    count_occurences(&re,&check_str);
+    // count_occurences(&re,&check_str);
 
 }
