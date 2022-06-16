@@ -16,16 +16,21 @@ fn check_sub_array(A:&[usize],B:&[usize]) {
             j=0;
         }
     }
-
     println!("nah");
 }
 
 // bai 2
-fn count_occurences(reference: &str, check_str: &str){
+fn count_occurences(reference: String, check_str: &str){
     let res = reference.matches(&check_str).count();
     println!("{}",res);
 }
 
+// huong lam bai nang cao
+// fn count2(input_str:String){
+//     let re:String=format!(r"()",input_str);
+//     let re:Regex=Regex::new(re:re.as_str()).unwrap();
+//     let count:usize=re.captures_iter(text:SENTENCE).count();
+// }
 
 fn main() {
 
@@ -39,6 +44,6 @@ fn main() {
     let mut check_str: String = String::new();
     std::io::stdin().read_line(&mut check_str);
 
-    // count_occurences(&re,&check_str);
+    count_occurences(re,&check_str);
 
 }
