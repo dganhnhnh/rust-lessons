@@ -3,7 +3,7 @@
 // //Exercise 1
 // fn main() {
 //     let x = change_value(10,&mut 20);
-//     // println!("{}",x);
+//     println!("{}",x);
 // }
 
 
@@ -17,6 +17,7 @@
 //     *output
 // }
 
+
 // // Exercise 2
 
 // fn main() {
@@ -27,7 +28,7 @@
 
 //     while count < 10 {
 //         num += 2;
-//         if vector_is_prime(num, &primes) {
+//         if vector_is_prime(&num, &primes) {
 //             count += 1;
 //             primes.push(num);
 //         }
@@ -35,9 +36,9 @@
 //     println!("{:?}", primes);
 // }
 
-// fn vector_is_prime(num: u64, p: &Vec<u64>) -> bool {
+// fn vector_is_prime(num: &u64, p: &Vec<u64>) -> bool {
 //     for i in p {
-//         if num > *i && num % i != 0 {
+//         if *num > *i && *num % *i == 0 {
 //             return false;
 //         }
 //     }
@@ -69,27 +70,23 @@
 // }
 
 
-//Exercise 4
-fn main(){
-    let  a = vec![1,2,3,4,5];
-    let  mut i = 0;
-    let c = 0;
-    loop {
-        let (a, c) = test(a.clone());
-        println!("{}",c);
-        i+=1;
-        if i >=5 {break;}
-    }
-}
+// //Exercise 4
+// fn main(){
+//     let  mut a = vec![1,2,3,4,5];
+//     let  mut i = 0;
+//     let c = 0;
+//     let (b, c) = test(&mut a);
+//     println!("{:?}",b);
+// }
 
-pub fn test(mut a: Vec<u8>) -> (Vec<u8>, i32) {
-    let mut b:Vec<u8>  = Vec::new();
-    let mut c:u8 = 0;
-    loop {
-        if a.len() == 0 { break; }
-        let d = a.pop().unwrap();
-        c = c+d;
-        b.push(d);
-    }
-    (b, c as i32)
-}
+// fn test( a: &mut Vec<u8>) -> (Vec<u8>, i32) {
+//     let mut b:Vec<u8>  = Vec::new();
+//     let mut c:u8 = 0;
+//     loop {
+//         if a.len() == 0 { break; }
+//         let d = a.pop().unwrap();
+//         c = c+d;
+//         b.push(d);
+//     }
+//     (b, c as i32)
+// }
